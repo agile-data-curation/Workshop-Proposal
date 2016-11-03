@@ -1,4 +1,7 @@
-#Workshop Proposal Abstract
+#Agile Curation Workshop Proposal Abstract
+W. Christopher Lenhardt, RENCI
+Karl Benedict, UNM
+Josh Young, UCAR
 
 Reusability of scientific data and reproducible science are directly connected to the ability to do the value-added work 
 to generate metadata, documentation, and standardization. However, data volumes, the inclusion of software, new tools and 
