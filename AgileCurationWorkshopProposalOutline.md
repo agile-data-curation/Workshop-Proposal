@@ -20,24 +20,28 @@ Reusability of scientific data and reproducible science are directly connected t
 More importantly, however, is that the widely adopted standard model for approaching data curation is data is created used for its original purpose and then handed to a repository or archive. When curation is considered for scientific data it is often at the end of the research process. That is when a scientist publishes their research, they may then decide or be required to deposit there data in an archive or repository. At that point, many questions are raised related to provenance and curational metadata that are much more difficult to answer at the end of the process.
 
 ###Broader Impacts
-Bringing together a wide range of curation experts, data scientists, and data users will promote a dialog on what needs to change in order to provide the requisite curation capabilities for science in the age of the *Fourth Paradigm*. This conversation will have practical outcomes such as new ideas for best practices, and new approaches to more efficient use of available resources to promote the mutually suportive goals of curation and science. We will also be including representatives from HBUC as part of this effort and we will be including a cohort of young scientists and early career participants. These elements will help to provide potentially far reaching effects.
+Bringing together a wide range of curation experts, data scientists, and data users will promote a dialog on what needs to change in order to provide the requisite curation capabilities for science in the age of the *Fourth Paradigm*. This conversation will have practical outcomes such as new ideas for best practices, and new approaches to more efficient use of available resources to promote the mutually suportive goals of curation and science. We will also be including representatives from HBUC as part of this effort and we will be including a cohort of young scientists and early career participants. These outcomes will foster far reaching effects.
 
 **[PAGE BREAK HERE]**
 
 ##Workshop Objectives and Outcomes
 
 ###Objectives
-1. Bring together experts in relevant fields such as data curation, data science, library science, software carpentry, and data carpentry, 
-2. Systematically identify commonly understood barriers to effective data curation, 
-3. Explore the application of agile software development concepts and their applicability to data management, 
-4. Identify research issues
-5. Identify education / training issues and opportunities
-6. Community development   
+The goal of this workshop is to bring together experts in relevant fields such as data curation, data science, library science, software carpentry, and data carpentry to: 
+1. Systematically identify commonly understood barriers to effective data curation, 
+2. Explore the application of agile software development concepts and their applicability to data management, 
+3. Identify research issues
+4. Identify education / training issues and opportunities
+5. Community development   
   
 *Key Concepts for Discussion
-*Key topics to be explored include [isn't this the same thing as key concepts?]
-
-
+*Key topics to be explored include:
+1. What is meant by agile curation?
+2. What makes a notion of agile curation different from the commonly accepted approaches to data managment?
+3. Are there situations where agile curation does not make sense?
+4. How can the notion of 'curate early and often' be operationalized?
+5. Agile curation in the long-tail versus agile curation and big science.
+6. And???
 
 ###Outcomes
 1. Refince agile curation conceptual framework
