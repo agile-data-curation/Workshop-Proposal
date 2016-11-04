@@ -3,6 +3,10 @@
 ***
 
 
+##NASA
+*Chris Lynnes*  
+EOSDIS System Architect at NASA
+
 ##NOAA
 *Scott Hausman*  
 Chief, Data Stewardship Division at NOAA's National Centers for Environmental Information (NCEI)
@@ -13,9 +17,6 @@ NOAA Big Data Partnership
 *Jeff de La Beaujardier*  
 Data Management Architect
 
-##NASA
-*Chris Lynnes*  
-EOSDIS System Architect at NASA
 
 ##USGS
 *Sky Bristol*  
