@@ -1,6 +1,7 @@
 
-__#Potential Agency Contacts to Pitch Idea__  
+#Potential Agency Contacts to Pitch Idea  
 ***
+
 
 ##NOAA
 *Scott Hausman*  
@@ -24,3 +25,8 @@ Branch Chief, Biogeographic Characterization at US Geological Survey
 *Robert Chadduck*  
 ACI Div Of Advanced Cyberinfrastructure
 CSE Direct For Computer & Info Scie & Enginr
+
+
+#Talking Points for Pitch
+Will need to think about what's in it for each agency as part of the pitch, or simply ask them what would benefit them the most.
+
