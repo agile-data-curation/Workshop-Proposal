@@ -1,14 +1,15 @@
 #Agile Curation Workshop Proposal Abstract
-W. Christopher Lenhardt, RENCI
-Karl Benedict, UNM
-Josh Young, UCAR
+__W. Christopher Lenhardt, RENCI; 
+Karl Benedict, UNM; 
+Josh Young, UCAR__ 
+
 
 Reusability of scientific data and reproducible science are directly connected to the ability to do the value-added work 
 to generate metadata, documentation, and standardization. However, data volumes, the inclusion of software, new tools and 
 techniques, distributed collaboration, limited resources, and more inhibit the timely generation of requisite scientific data 
 curation content. Furthermore, the very notion of the lifecycle of a dataset is changing.
 
-When curation is considered for scientific data it is often at the end of the research process. That is when a scientist publishes their research, they may then decide or be required to deposit there data in an archive or repository. At that point, the data is thrown over the virtual wall to the designated repository. The recipiant archive will have many questions to ask related to provenance and curational metadata that are much more difficult to answer at the end of the process. 
+When curation is considered for scientific data it is often at the end of the research process. That is when a scientist publishes their research, they may then decide or be required to deposit their data in an archive or repository. At that point, the data is thrown over the virtual wall to the designated repository. The recipiant archive will have many questions to ask related to provenance and curational metadata that are much more difficult to answer at the end of the process. 
 
 We argue that a new conceptualization of data curation needs to be developed. One that incorporates new tools and new approaches available to rethink data life cycle curation; approaches such as agile software methodologies and conceptualizing data life stories. The application of these new approaches can be summarized with two principles: 1) Move the inclusion of data management and curation as early in the research process as possible, and 2) to not think of data as static, but something that is dynamic with an ongoing presence.
 
