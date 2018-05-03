@@ -17,6 +17,7 @@
 * Someone from the library community
 * Someone from research computing 
 * Someone from publishing
+* Researchers ...
 
 ##Potential Funding Opportunities:
 
