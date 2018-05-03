@@ -15,6 +15,7 @@
 * Someone from Software Carpentry
 * Someone from digital curation community
 * Someone from the library community
+* Someone from research computing 
 
 ##Potential Funding Opportunities:
 
