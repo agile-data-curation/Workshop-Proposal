@@ -18,6 +18,7 @@
 * Someone from research computing 
 * Someone from publishing
 * Researchers ...
+* Data system developers
 
 ##Potential Funding Opportunities:
 
