@@ -67,6 +67,11 @@ The goal of this workshop is to bring together experts in relevant fields such a
 * Addressing education and training
 * Community building around this approach
 
+## Potential Workshop locations
+
+* RDAP
+* AGU
+
 ##A List of Recent Meetings on the Same Subject
 
 ##Proposed Workshop Location and Dates, Announcement, Workshop Family and Child Care Resources
