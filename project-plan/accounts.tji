@@ -1,0 +1,86 @@
+# If you want to do budget planning for you project, you need to
+# define some accounts.
+account cost "Total Costs"{
+  aggregate resources
+	account direct_cost "Direct Costs" {
+	  account salaries "Salaries" {
+		flags idc_include
+		account summer "Faculty- Summer Salary"
+		account release "Faculty - Release Salary"
+		account research "Research - Research Salary"
+		account postdoc "Postdoc Salary"
+		account grad "Graduate Student Salary"
+		account undergrad "Undergraduate Student Salary"
+		account highschool "High School Student Salary"
+	  }
+	  account fringe "Fringe Benefits" {
+		flags idc_include
+		account fringe_summer "Faculty - Summer Research Fringe Benefits"
+		account fringe_research_release "Faculty - Research faculty & Release Time Fringe Benefits"
+		account fringe_staff "Staff Fringe Benefits"
+		account fringe_postdoc "PostDoc Fringe Benefits"
+		account fringe_grad_undergrad "Graduate and Undergraduate Fringe Benefits"
+		account fringe_temp_hs "Temporary and High School Fringe Benefits"
+		account fringe_grad_fall_insurance "Graduate Student Fall Health Insurance"
+		account fringe_grad_spring_summer_insurance "Graduate Student Spring and Summer Health Insurance"
+	  }
+	  account ra_tuition "RA Tuition Compensation" {flags idc_exclude}
+	  account capital_equipment "Capital Equipment > $5k" {flags idc_exclude}
+	  account subaward_01 "Subaward - 01" {
+	  	account sub01_salary "Subaward 01 - Salary"
+	  	account sub01_travel "Subaward 01 - Travel"
+	  }
+	  account subaward_02 "Subaward - 02" {
+	  	account sub02_salary "Subaward 02 - Salary"
+	  	account sub02_travel "Subaward 02- Travel"
+	  }
+	  account subaward_03 "Subaward - 03" {
+	  	account sub03_salary "Subaward 03 - Salary"
+	  	account sub03_travel "Subaward 03- Travel"
+	  }
+	  account participant "Participant Costs" {
+		flags idc_exclude
+		account participant_stipends "Participant Stipends"
+		account participant_travel "Participant Travel" {
+			account participant_travel_airfare "Participant Travel - Airfare"
+			account participant_travel_lodging "Participant Travel - Lodging"
+			account participant_travel_registration "Participant Travel - Registration"
+			account participant_travel_perdiem "Participant Travel - Perdiem"
+			account participant_travel_ground "Participant Travel - Ground Transportation"
+		}
+		account participant_subsistence "Participant Subsistence"
+		account participant_other "Participant Other Costs"
+	  }
+	  account travel "Travel" {
+		flags idc_include
+		account travel_domestic "Domestic Travel" {
+			account travel_domestic_airfare "Domestic Travel - Airfare"
+			account travel_domestic_lodging "Domestic Travel - Lodging"
+			account travel_domestic_registration "Domestic Travel - Registration"
+			account travel_domestic_perdiem "Domestic Travel - Perdiem"
+			account travel_domestic_ground "Domestic Travel - Ground Transportation"
+			account travel_domestic_misc "Domestic Travel - Misc. Expenses"
+		}
+		account travel_international "International Travel" {
+			account travel_international_airfare "International Travel - Airfare"
+			account travel_international_lodging "International Travel - Lodging"
+			account travel_international_registration "International Travel - Registration"
+			account travel_international_perdiem "International Travel - Perdiem"
+			account travel_international_ground "International Travel - Ground Transportation"
+			account travel_international_misc "International Travel - Misc. Expenses"
+		}
+	  }
+	  account other "Other Costs" {
+		flags idc_include
+		account supplies "Supplies"
+		account publication "Publication Costs"
+		account consultants "Consultants"
+		account other_other "Other"
+	  }
+	}
+	account indirect_cost "Indirect Cost" {
+		flags idc_exclude
+	}
+}
+
+account rev "Sponsor"

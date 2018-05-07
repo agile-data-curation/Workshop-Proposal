@@ -1,0 +1,97 @@
+task project "Agile Data Curation Workshop" {
+	task milestones "Project Milestones" {
+		task start "Project Start" {
+			start ${projectstart}
+			milestone
+		}
+		task program_committee "Program Committee Coordination" {
+			task form_committee "Form Program Committee" {
+				start %{${projectstart} + 1m}
+				milestone 
+			}
+			task meeting_1 "Program Committee Meeting" {
+				start %{${projectstart} + 2m}
+				milestone 
+			}
+			task meeting_2 "Program Committee Meeting" {
+				start %{${projectstart} + 4m}
+				milestone 
+			}
+			task meeting_3 "Program Committee Meeting" {
+				start %{${projectstart} + 6m}
+				milestone 
+			}
+			task meeting_4 "Program Committee Meeting" {
+				start %{${projectstart} + 8m}
+				milestone 
+			}
+			task meeting_5 "Program Committee Meeting" {
+				start %{${projectstart} + 10m}
+				milestone 
+			}
+			task meeting_6 "Program Committee Meeting" {
+				start %{${projectstart} + 12m}
+				milestone 
+			}
+			task meeting_7 "Program Committee Meeting" {
+				start %{${projectstart} + 14m}
+				milestone 
+			}
+		}
+	}
+	task esip_planning "Workshop Pilot & Planning Meeting at ESIP Federation Summer Meeting"{
+ 		task esip_planning_planning "Planning for ESIP Pilot/Planning Meeting"{
+ 			end ${ESIP_pilot}
+ 			duration 3m
+ 			allocate kb_nc, cl, ps, jy
+ 			limits {
+ 				weeklymax 16h 
+ 			}
+ 		}
+ 		task esip_planning_meeting_personnel "ESIP Pilot/Planning Meeting Personnel" {
+ 			start ${ESIP_pilot}
+ 			duration 1d
+ 			allocate kb_nc, cl, ps, jy
+ 			allocate program
+ 		}
+		task esip_planning_meeting_travel "ESIP Pilot/Planning Meeting Travel" {
+			start ${ESIP_pilot}
+			duration 3d
+			allocate esip_pilot_travel	
+		}
+		task esip_planning_meeting_logistics "ESIP Pilot/Planning Meeting Logistics" {
+			start %{${ESIP_pilot} + 1d}
+			duration 1d
+			allocate workshop_space
+			allocate workshop_refreshments
+		}
+	}
+	task agu_workshop "Workshop at AGU Fall Meeting 2019"{
+ 		task agu_workshop_planning "Planning for the AGU workshop"{
+ 			end ${AGU_workshop}
+ 			duration 3m
+ 			allocate kb_nc, cl, ps, jy
+ 			limits {
+ 				weeklymax 16h 
+ 			}
+ 		}
+ 		task agu_workshop_personnel "AGU Workshop Personnel" {
+ 			start ${AGU_workshop}
+ 			duration 4d
+ 			allocate kb_nc, cl, ps, jy
+ 			allocate program
+ 		}
+		task agu_workshop_travel "AGU Workshop Travel" {
+			start ${AGU_workshop}
+			duration 3.5d
+			allocate agu_workshop_travel
+		}
+		task agu_workshop_logistics "AGU Workshop Logistics" {
+			start %{${AGU_workshop} + 1d}
+			duration 2d
+			allocate workshop_space
+			allocate workshop_refreshments
+		}
+	}
+}
+

@@ -1,0 +1,208 @@
+# The Profit&Loss analysis should be rev - cost accounts.
+balance cost rev
+
+navigator navbar {
+  hidereport 0
+}
+
+macro TaskTip [
+  tooltip istask() -8<-
+    '''Start: ''' <-query attribute='start'->
+    '''End: ''' <-query attribute='end'->
+    ----
+    '''Resources:'''
+
+    <-query attribute='resources'->
+    ----
+    '''Precursors: '''
+
+    <-query attribute='precursors'->
+    ----
+    '''Followers: '''
+
+    <-query attribute='followers'->
+    ->8-
+]
+
+textreport frame "" {
+  header -8<-
+    == TaskJuggler Project Template ==
+    <[navigator id="navbar"]>
+  ->8-
+  footer "----"
+  textreport index "Reports/Overview" {
+    formats html
+    center '<[report id="overview"]>'
+  }
+
+  textreport "Reports/Status" {
+    formats html
+    center -8<-
+      <[report id="status.dashboard"]>
+      ----
+      <[report id="status.completed"]>
+      ----
+      <[report id="status.ongoing"]>
+      ----
+      <[report id="status.future"]>
+    ->8-
+  }
+
+#  textreport wps "Reports/Work packages" {
+#    textreport wp1 "Reports/Work package 1" {
+#      formats html
+#      center '<[report id="wp1"]>'
+#    }
+#
+#    textreport wp2 "Reports/Work package 2" {
+#      formats html
+#      center '<[report id="wp2"]>'
+#    }
+#  }
+#
+#  textreport "Reports/Deliveries" {
+#    formats html
+#    center '<[report id="deliveries"]>'
+#  }
+
+#
+#  textreport contacts "Reports/ContactList" {
+#    formats html
+#    title "Contact List"
+#    center '<[report id="contactList"]>'
+#  }
+  textreport resourcegraph "Reports/ResourceGraph" {
+    formats html
+    title "Resource Graph"
+    center '<[report id="resourceGraph"]>'
+  }
+}
+
+# A traditional Gantt chart with a project overview.
+taskreport overview "" {
+  header -8<-
+    === Project Overview ===
+
+    Agile Data Curation Workshop Planning and Execution
+
+
+    === Proposed Project Plan ===
+  ->8-
+  balance cost rev
+  columns bsi { title 'WBS' },name, start, end, effort, monthly
+  # For this report we like to have the abbreviated weekday in front
+  # of the date. %a is the tag for this.
+  timeformat "%Y-%m"
+  loadunit days
+  hideresource 0
+  rollupresource plan.id = 'travel'
+  caption 'All effort values are in person days.'
+
+  footer -8<-
+    === Staffing ===
+
+    All project phases are properly staffed. See [[ResourceGraph]] for
+    detailed resource allocations.
+
+    === Current Status ===
+
+    Preliminary Draft - 2018-05-07
+  ->8-
+}
+
+# Macro to set the background color of a cell according to the alert
+# level of the task.
+macro AlertColor [
+  cellcolor plan.alert = 0 "#00D000" # green
+  cellcolor plan.alert = 1 "#D0D000" # yellow
+  cellcolor plan.alert = 2 "#D00000" # red
+]
+
+taskreport status "" {
+  columns bsi { width 50 title 'WBS' }, name { width 150 },
+          start { width 100 }, end { width 100 },
+          effort { width 100 },
+          alert { tooltip plan.journal
+                          != '' "<-query attribute='journal'->" width 150 },
+          status { width 150 }
+
+  taskreport dashboard "" {
+    headline "Project Dashboard (<-query attribute='now'->)"
+    columns name { title "Task" ${AlertColor} width 200},
+            resources { width 200 ${AlertColor}
+                        listtype bullets
+                        listitem "<-query attribute='name'->"
+                        start ${projectstart} end ${projectend} },
+            alerttrend { title "Trend" ${AlertColor} width 50 },
+            journal { width 350 ${AlertColor} }
+    journalmode status_up
+    journalattributes headline, author, date, summary, details
+    hidetask ~hasalert(0)
+    sorttasks alert.down, plan.end.up
+    period %{${now} - 1w} +1w
+  }
+  taskreport completed "" {
+    headline "Already completed tasks"
+    hidetask ~(plan.end <= ${now})
+  }
+  taskreport ongoing "" {
+    headline "Ongoing tasks"
+    hidetask ~((plan.start <= ${now}) & (plan.end > ${now}))
+  }
+  taskreport future "" {
+    headline "Future tasks"
+    hidetask ~(plan.start > ${now})
+  }
+}
+
+## A list of tasks showing the resources assigned to each task.
+#taskreport wp1 "" {
+#  headline "Work package 1 - Resource Allocation Report"
+#  columns bsi { title 'WBS' }, name, start, end, effort { title "Work" },
+#          duration, chart { ${TaskTip} scale day width 500 }
+#  timeformat "%Y-%m-%d"
+#  hideresource ~(isleaf() & isleaf_())
+#  sortresources name.up
+#  taskroot project
+#}
+#
+## A list of all tasks with the percentage completed for each task
+#taskreport deliveries "" {
+#  headline "Project Deliverables"
+#  columns bsi { title 'WBS' }, name, start, end, note { width 150 }, complete,
+#          chart { ${TaskTip} }
+#  taskroot project
+#  hideresource 1
+#}
+## A list of all employees with their contact details.
+#resourcereport contactList "" {
+#  headline "Contact list and duty plan"
+#  columns name,
+#          email { celltext 1 "[mailto:<-email-> <-email->]" },
+#          managers { title "Manager" },
+#          chart { scale day }
+#  hideresource ~isleaf()
+#  sortresources name.up
+#  hidetask 1
+#}
+
+# A graph showing resource allocation. It identifies whether each
+# resource is under- or over-allocated for.
+resourcereport resourceGraph "" {
+  headline "Resource Allocation Graph"
+  balance cost rev
+  columns no, name, effort, cost, monthly { ${TaskTip} }
+  loadunit shortauto
+  # We only like to show leaf tasks for leaf resources.
+  #hidetask ~(isleaf() & isleaf_())
+  hidetask @all
+  sorttasks plan.start.up
+}
+
+accountreport "Reports/TeamBudget" {
+  formats html
+  flags budget_include
+  accountroot cost
+  balance -
+  columns no, name, turnover, quarterly { celltext 1 "<-query attribute='turnover'->" }
+}

@@ -1,0 +1,368 @@
+# The daily default rate of all resources. This can be overridden for each
+# resource. We specify this, so that we can do a good calculation of
+# the costs of the project.
+rate 0
+
+resource kb_nc "Karl Benedict" {
+	Role "PI"
+	efficiency 1
+}
+
+#resource kb "Karl Benedict" {
+#	Role "PI"
+#	resource kb_fy19 "Karl Benedict - FY19" {
+#		vacation 2000-07-01 - 2018-07-01
+#		vacation 2019-07-01 +20y
+#		resource kb_fy19_sal "Salary" {
+#			# base salary: 92700
+#			efficiency 1.0
+#			rate 357
+#			chargeset release
+#		}
+#		resource kb_fy19_fringe "Fringe Benefits" {
+#			# rate 29.2 %
+#			efficiency 0
+#			rate 104
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy19_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 237
+#			chargeset indirect_cost
+#		}
+#	}
+#	resource kb_fy20 "Karl Benedict - FY20" {
+#		vacation 2000-07-01 - 2019-07-01
+#		vacation 2020-07-01 +20y
+#		resource kb_fy20_sal "Salary" {
+#			# base salary: 95481
+#			efficiency 1.0
+#			rate 367
+#			chargeset release
+#		}
+#		resource kb_fy20_fringe "Fringe Benefits" {
+#			# rate 29.4 %
+#			efficiency 0
+#			rate 108
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy20_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 245
+#			chargeset indirect_cost
+#		}
+#	}
+#	resource kb_fy21 "Karl Benedict - FY21" {
+#		vacation 2000-07-01 - 2020-07-01
+#		vacation 2021-07-01 +20y
+#		resource kb_fy21_sal "Salary" {
+#			# base salary: 98345
+#			efficiency 1.0
+#			rate 378
+#			chargeset release
+#		}
+#		resource kb_fy21_fringe "Fringe Benefits" {
+#			# rate 29.6%
+#			efficiency 0
+#			rate 112
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy21_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 252
+#			chargeset indirect_cost
+#		}
+#	}
+#	resource kb_fy22 "Karl Benedict - FY22" {
+#		vacation 2000-07-01 - 2021-07-01
+#		vacation 2022-07-01 +20y
+#		resource kb_fy22_sal "Salary" {
+#			# base salary: 101296
+#			efficiency 1.0
+#			rate 390
+#			chargeset release
+#		}
+#		resource kb_fy22_fringe "Fringe Benefits" {
+#			# rate 29.8%
+#			efficiency 0
+#			rate 116
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy22_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 260
+#			chargeset indirect_cost
+#		}
+#	}
+#	resource kb_fy23 "Karl Benedict - FY23" {
+#		vacation 2000-07-01 - 2022-07-01
+#		vacation 2023-07-01 +20y
+#		resource kb_fy23_sal "Salary" {
+#			# base salary: 104335
+#			efficiency 1.0
+#			rate 401
+#			chargeset release
+#		}
+#		resource kb_fy23_fringe "Fringe Benefits" {
+#			# rate 30%
+#			efficiency 0
+#			rate 120
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy23_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 269
+#			chargeset indirect_cost
+#		}
+#	}
+#	resource kb_fy24 "Karl Benedict - FY24" {
+#		vacation 2000-07-01 - 2023-07-01
+#		vacation 2024-07-01 +20y
+#		resource kb_fy24_sal "Salary" {
+#			# base salary: 107465
+#			efficiency 1.0
+#			rate 413
+#			chargeset release
+#		}
+#		resource kb_fy24_fringe "Fringe Benefits" {
+#			# rate 30.2%
+#			efficiency 0
+#			rate 125
+#			chargeset fringe_research_release
+#		}
+#		resource kb_fy24_idc "IDC" {
+#			# rate 51.5 %
+#			efficiency 0
+#			rate 277
+#			chargeset indirect_cost
+#		}
+#	}
+#	
+#}
+
+resource cl "Christopher Lenhardt" {
+	Role "Co-I"
+	efficiency 1
+	chargeset sub01_salary
+}
+
+resource ps "Plato Smith"  {
+	Role "Co-I"
+	efficiency 1
+	chargeset sub02_salary
+}
+
+resource jy "Joshua Young"  {
+	Role "Collaborator"
+	efficiency 1
+	rate 0
+}
+
+resource program "Program Committee" {
+	efficiency 1
+	rate 0
+}
+
+resource participants "Workshop Participants" {
+	efficiency 1
+	rate 0
+}
+
+resource travel "Travel"{
+	efficiency 0
+	resource agu_workshop_travel "AGU Workshop Travel"{
+		resource agu_workshop_participants "AGU Workshop Participants Travel" {
+			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+ 			resource  "Participant" ${AGU_participant_travel}
+# 			resource  "Participant" ${AGU_participant_travel}
+# 			resource  "Participant" ${AGU_participant_travel}
+# 			resource  "Participant" ${AGU_participant_travel}
+# 			resource  "Participant" ${AGU_participant_travel}
+# 			resource  "Participant" ${AGU_participant_travel}
+		}
+		resource agu_travel_kb "KB AGU Travel" {
+			resource "Airfare" {
+				rate ${SF_Generic_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_airfare 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${SF_Perdiem_LOADED}
+				chargeset travel_domestic_perdiem 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${SF_Lodging_LOADED}
+				chargeset travel_domestic_lodging 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${SF_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_ground 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${AGU_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_registration 66.01%, indirect_cost 33.99%
+			}
+		}
+		resource agu_travel_cl "CL AGU Travel" {
+			resource "Airfare" {
+				rate ${SF_Generic_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${SF_Perdiem_LOADED}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${SF_Lodging_LOADED}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${SF_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${AGU_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+		}
+		resource agu_travel_ps "PS AGU Travel" {
+			resource "Airfare" {
+				rate ${SF_Generic_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${SF_Perdiem_LOADED}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${SF_Lodging_LOADED}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${SF_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${AGU_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+		}
+	}
+	
+	resource esip_pilot_travel "ESIP Pilot Travel" {
+		resource esip_travel_kb "KB ESIP Travel" {
+			resource "Airfare" {
+				rate ${ESIP_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_airfare 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${ESIP_Perdiem_LOADED}
+				chargeset travel_domestic_perdiem 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${ESIP_Lodging_LOADED}
+				chargeset travel_domestic_lodging 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${ESIP_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_ground 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${ESIP_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset travel_domestic_registration 66.01%, indirect_cost 33.99%
+			}
+		}
+		resource esip_travel_cl "CL ESIP Travel" {
+			resource "Airfare" {
+				rate ${ESIP_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${ESIP_Perdiem_LOADED}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${ESIP_Lodging_LOADED}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${ESIP_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${ESIP_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset sub01_travel 66.01%, indirect_cost 33.99%
+			}
+		}
+		resource esip_travel_ps "PS ESIP Travel" {
+			resource "Airfare" {
+				rate ${ESIP_Airfare_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "PerDiem" {
+				rate ${ESIP_Perdiem_LOADED}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Lodging" {
+				rate ${ESIP_Lodging_LOADED}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Ground Transportation" {
+				rate ${ESIP_GroundTransport_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+			resource "Registration" {
+				rate ${ESIP_Registration_LOADED}
+				limits {maximum 1d}
+				chargeset sub02_travel 66.01%, indirect_cost 33.99%
+			}
+		}
+		resource esip_travel_participants "Participants ESIP Travel" {
+			resource "Participant" ${ESIP_participant_travel}
+			resource "Participant" ${ESIP_participant_travel}
+			resource "Participant" ${ESIP_participant_travel}
+#			resource "Participant" ${ESIP_participant_travel}
+#			resource "Participant" ${ESIP_participant_travel}
+		}
+	}
+}
+
+
+resource workshop_space "Workshop Space"{
+	rate 500
+	chargeset participant_other 
+}
+
+resource workshop_refreshments "Workshop Refreshments"{
+	rate 500
+	chargeset participant_subsistence 
+}

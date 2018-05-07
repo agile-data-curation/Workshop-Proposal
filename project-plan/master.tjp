@@ -1,0 +1,49 @@
+project nsf_workshop "2018 NSF DCL Workshop"  2018-09-01 - 2019-12-31 {
+  # Set the default time zone for the project. If not specified, UTC
+  # is used.
+  # timezone 'America/New York'
+  # Hide the clock time. Only show the date.
+  timeformat "%Y-%m-%d"
+  # Use US format for numbers
+  numberformat "-" "" "," "." 1
+  # Use US financial format for currency values. Don't show cents.
+  currencyformat "(" ")" "," "." 0
+  # Pick a day during the project that will be reported as 'today' in
+  # the project reports. If not specified, the current day will be
+  # used, but this will likely be outside of the project range, so it
+  # can't be seen in the reports.
+  now 2018-09-01
+  # The currency for all money values is the Euro.
+  currency "USD"
+
+  # You can define multiple scenarios here if you need them.
+  scenario plan "Proposal" {
+    scenario actual "Actual"
+  }
+
+  # You can define your own attributes for tasks and resources. This
+  # is handy to capture additional information about the project that
+  # is not directly impacting the project schedule but you like to
+  # keep in one place.
+  extend task {
+    richtext Description "Detailed description"
+  }
+  extend resource {
+    text Phone "Phone"
+    text Role "Project Role"
+  }
+}
+
+include "macros.tji"
+
+include "flags.tji"
+
+include "accounts.tji"
+
+include "holidays.tji"
+
+include "resources.tji"
+
+include "tasks.tji"
+
+include "reports.tji"
